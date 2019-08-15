@@ -8,13 +8,24 @@
 
 import UIKit
 
+class SubtitleTableViewCell: UITableViewCell {
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
 class CountriesListViewController: UIViewController {
     
     @IBOutlet weak var tableView : UITableView!
     var tableData : Cities?
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
+        tableView.register(SubtitleTableViewCell.self, forCellReuseIdentifier: "UITabelViewCell")
         loadData()
     }
     
@@ -41,8 +52,10 @@ extension CountriesListViewController : UITableViewDelegate , UITableViewDataSou
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let myTableData = tableData?[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UITabelViewCell", for: indexPath)
+
         cell.textLabel?.text = myTableData?.country
+        cell.detailTextLabel?.text = "\(myTableData?.coord?.lat ?? 0) ,\( myTableData?.coord?.lon ?? 0)"
         cell.imageView?.image = #imageLiteral(resourceName: "country")
         return cell
     }
