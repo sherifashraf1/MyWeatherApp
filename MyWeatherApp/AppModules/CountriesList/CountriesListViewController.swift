@@ -25,6 +25,7 @@ class CountriesListViewController: UIViewController {
     var tableData : Cities?
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Countries"
         tableView.register(SubtitleTableViewCell.self, forCellReuseIdentifier: "UITabelViewCell")
         loadData()
     }
@@ -58,6 +59,13 @@ extension CountriesListViewController : UITableViewDelegate , UITableViewDataSou
         cell.detailTextLabel?.text = "\(myTableData?.coord?.lat ?? 0) ,\( myTableData?.coord?.lon ?? 0)"
         cell.imageView?.image = #imageLiteral(resourceName: "earth")
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedCountry = tableData?[indexPath.row]
+        let vc = WeatherDetailsViewController()
+        vc.data = selectedCountry
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }
