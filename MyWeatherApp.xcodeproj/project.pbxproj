@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		E04C9B612305154F008FC1F0 /* CountriesList.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E04C9B602305154F008FC1F0 /* CountriesList.xcassets */; };
+		E04C9B6523052514008FC1F0 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04C9B6423052514008FC1F0 /* MainTabBarViewController.swift */; };
+		E04C9B6823052ACE008FC1F0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04C9B6623052ACE008FC1F0 /* ProfileViewController.swift */; };
+		E04C9B6923052ACE008FC1F0 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E04C9B6723052ACE008FC1F0 /* ProfileViewController.xib */; };
+		E04C9B6B23052AE3008FC1F0 /* Profile.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E04C9B6A23052AE3008FC1F0 /* Profile.xcassets */; };
 		E08E4BA92304FEEC005D2F6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08E4BA82304FEEC005D2F6C /* AppDelegate.swift */; };
 		E08E4BB02304FEED005D2F6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E08E4BAF2304FEED005D2F6C /* Assets.xcassets */; };
 		E08E4BB32304FEED005D2F6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E08E4BB12304FEED005D2F6C /* LaunchScreen.storyboard */; };
@@ -30,6 +34,10 @@
 
 /* Begin PBXFileReference section */
 		E04C9B602305154F008FC1F0 /* CountriesList.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CountriesList.xcassets; sourceTree = "<group>"; };
+		E04C9B6423052514008FC1F0 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		E04C9B6623052ACE008FC1F0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E04C9B6723052ACE008FC1F0 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		E04C9B6A23052AE3008FC1F0 /* Profile.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Profile.xcassets; sourceTree = "<group>"; };
 		E08E4BA52304FEEC005D2F6C /* MyWeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyWeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E08E4BA82304FEEC005D2F6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E08E4BAF2304FEED005D2F6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,6 +70,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E04C9B62230524DE008FC1F0 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				E04C9B6423052514008FC1F0 /* MainTabBarViewController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		E04C9B63230524EA008FC1F0 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				E04C9B6623052ACE008FC1F0 /* ProfileViewController.swift */,
+				E04C9B6723052ACE008FC1F0 /* ProfileViewController.xib */,
+				E04C9B6A23052AE3008FC1F0 /* Profile.xcassets */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		E08E4B9C2304FEEC005D2F6C = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +127,8 @@
 		E08E4BC923050008005D2F6C /* AppModules */ = {
 			isa = PBXGroup;
 			children = (
+				E04C9B63230524EA008FC1F0 /* Profile */,
+				E04C9B62230524DE008FC1F0 /* TabBar */,
 				E08E4BCC2305053C005D2F6C /* CountriesList */,
 			);
 			path = AppModules;
@@ -226,7 +254,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E04C9B6923052ACE008FC1F0 /* ProfileViewController.xib in Resources */,
 				E04C9B612305154F008FC1F0 /* CountriesList.xcassets in Resources */,
+				E04C9B6B23052AE3008FC1F0 /* Profile.xcassets in Resources */,
 				E08E4BD023050569005D2F6C /* CountriesListViewController.xib in Resources */,
 				E08E4BD323050C08005D2F6C /* city.list.json in Resources */,
 				E08E4BB32304FEED005D2F6C /* LaunchScreen.storyboard in Resources */,
@@ -249,6 +279,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E08E4BA92304FEEC005D2F6C /* AppDelegate.swift in Sources */,
+				E04C9B6523052514008FC1F0 /* MainTabBarViewController.swift in Sources */,
+				E04C9B6823052ACE008FC1F0 /* ProfileViewController.swift in Sources */,
 				E08E4BCF23050569005D2F6C /* CountriesListViewController.swift in Sources */,
 				E08E4BD523050C57005D2F6C /* CityModel.swift in Sources */,
 			);
