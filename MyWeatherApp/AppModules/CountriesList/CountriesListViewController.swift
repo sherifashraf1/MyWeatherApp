@@ -42,9 +42,9 @@ extension CountriesListViewController : UITableViewDelegate , UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let myTableData = tableData?[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
-        cell.textLabel?.text = myTableData?.name
+        cell.textLabel?.text = myTableData?.country
+        cell.imageView?.image = #imageLiteral(resourceName: "country")
         return cell
     }
-    
     
 }
