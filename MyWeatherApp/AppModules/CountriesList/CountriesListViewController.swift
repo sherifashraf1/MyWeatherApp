@@ -58,6 +58,7 @@ extension CountriesListViewController : UITableViewDelegate , UITableViewDataSou
         cell.textLabel?.text = myTableData?.country
         cell.detailTextLabel?.text = "\(myTableData?.coord?.lat ?? 0) ,\( myTableData?.coord?.lon ?? 0)"
         cell.imageView?.image = #imageLiteral(resourceName: "earth")
+        cell.selectionStyle = .none
         return cell
     }
     
