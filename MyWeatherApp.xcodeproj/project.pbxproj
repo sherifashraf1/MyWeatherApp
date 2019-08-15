@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		E08E4BA92304FEEC005D2F6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08E4BA82304FEEC005D2F6C /* AppDelegate.swift */; };
-		E08E4BAB2304FEEC005D2F6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08E4BAA2304FEEC005D2F6C /* ViewController.swift */; };
-		E08E4BAE2304FEEC005D2F6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E08E4BAC2304FEEC005D2F6C /* Main.storyboard */; };
 		E08E4BB02304FEED005D2F6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E08E4BAF2304FEED005D2F6C /* Assets.xcassets */; };
 		E08E4BB32304FEED005D2F6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E08E4BB12304FEED005D2F6C /* LaunchScreen.storyboard */; };
 		E08E4BBE2304FEED005D2F6C /* MyWeatherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08E4BBD2304FEED005D2F6C /* MyWeatherAppTests.swift */; };
+		E08E4BCF23050569005D2F6C /* CountriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08E4BCD23050569005D2F6C /* CountriesListViewController.swift */; };
+		E08E4BD023050569005D2F6C /* CountriesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E08E4BCE23050569005D2F6C /* CountriesListViewController.xib */; };
+		E08E4BD323050C08005D2F6C /* city.list.json in Resources */ = {isa = PBXBuildFile; fileRef = E08E4BD223050C08005D2F6C /* city.list.json */; };
+		E08E4BD523050C57005D2F6C /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08E4BD423050C57005D2F6C /* CityModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,14 +30,16 @@
 /* Begin PBXFileReference section */
 		E08E4BA52304FEEC005D2F6C /* MyWeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyWeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E08E4BA82304FEEC005D2F6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E08E4BAA2304FEEC005D2F6C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E08E4BAD2304FEEC005D2F6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E08E4BAF2304FEED005D2F6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E08E4BB22304FEED005D2F6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E08E4BB42304FEED005D2F6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E08E4BB92304FEED005D2F6C /* MyWeatherAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyWeatherAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E08E4BBD2304FEED005D2F6C /* MyWeatherAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWeatherAppTests.swift; sourceTree = "<group>"; };
 		E08E4BBF2304FEED005D2F6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E08E4BCD23050569005D2F6C /* CountriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListViewController.swift; sourceTree = "<group>"; };
+		E08E4BCE23050569005D2F6C /* CountriesListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountriesListViewController.xib; sourceTree = "<group>"; };
+		E08E4BD223050C08005D2F6C /* city.list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.list.json; sourceTree = "<group>"; };
+		E08E4BD423050C57005D2F6C /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +81,8 @@
 		E08E4BA72304FEEC005D2F6C /* MyWeatherApp */ = {
 			isa = PBXGroup;
 			children = (
-				E08E4BA82304FEEC005D2F6C /* AppDelegate.swift */,
-				E08E4BAA2304FEEC005D2F6C /* ViewController.swift */,
-				E08E4BAC2304FEEC005D2F6C /* Main.storyboard */,
-				E08E4BAF2304FEED005D2F6C /* Assets.xcassets */,
-				E08E4BB12304FEED005D2F6C /* LaunchScreen.storyboard */,
-				E08E4BB42304FEED005D2F6C /* Info.plist */,
+				E08E4BC923050008005D2F6C /* AppModules */,
+				E08E4BCA2305001D005D2F6C /* Shared */,
 			);
 			path = MyWeatherApp;
 			sourceTree = "<group>";
@@ -94,6 +94,52 @@
 				E08E4BBF2304FEED005D2F6C /* Info.plist */,
 			);
 			path = MyWeatherAppTests;
+			sourceTree = "<group>";
+		};
+		E08E4BC923050008005D2F6C /* AppModules */ = {
+			isa = PBXGroup;
+			children = (
+				E08E4BCC2305053C005D2F6C /* CountriesList */,
+			);
+			path = AppModules;
+			sourceTree = "<group>";
+		};
+		E08E4BCA2305001D005D2F6C /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				E08E4BCB2305002B005D2F6C /* Assets */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		E08E4BCB2305002B005D2F6C /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				E08E4BA82304FEEC005D2F6C /* AppDelegate.swift */,
+				E08E4BAF2304FEED005D2F6C /* Assets.xcassets */,
+				E08E4BB12304FEED005D2F6C /* LaunchScreen.storyboard */,
+				E08E4BB42304FEED005D2F6C /* Info.plist */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		E08E4BCC2305053C005D2F6C /* CountriesList */ = {
+			isa = PBXGroup;
+			children = (
+				E08E4BD123050BFA005D2F6C /* Store */,
+				E08E4BCD23050569005D2F6C /* CountriesListViewController.swift */,
+				E08E4BCE23050569005D2F6C /* CountriesListViewController.xib */,
+			);
+			path = CountriesList;
+			sourceTree = "<group>";
+		};
+		E08E4BD123050BFA005D2F6C /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				E08E4BD223050C08005D2F6C /* city.list.json */,
+				E08E4BD423050C57005D2F6C /* CityModel.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,9 +223,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E08E4BD023050569005D2F6C /* CountriesListViewController.xib in Resources */,
+				E08E4BD323050C08005D2F6C /* city.list.json in Resources */,
 				E08E4BB32304FEED005D2F6C /* LaunchScreen.storyboard in Resources */,
 				E08E4BB02304FEED005D2F6C /* Assets.xcassets in Resources */,
-				E08E4BAE2304FEEC005D2F6C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,8 +244,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E08E4BAB2304FEEC005D2F6C /* ViewController.swift in Sources */,
 				E08E4BA92304FEEC005D2F6C /* AppDelegate.swift in Sources */,
+				E08E4BCF23050569005D2F6C /* CountriesListViewController.swift in Sources */,
+				E08E4BD523050C57005D2F6C /* CityModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,14 +269,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E08E4BAC2304FEEC005D2F6C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E08E4BAD2304FEEC005D2F6C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E08E4BB12304FEED005D2F6C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -362,7 +402,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HWMH9QLTZW;
-				INFOPLIST_FILE = MyWeatherApp/Info.plist;
+				INFOPLIST_FILE = MyWeatherApp/Shared/Assets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -380,7 +420,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HWMH9QLTZW;
-				INFOPLIST_FILE = MyWeatherApp/Info.plist;
+				INFOPLIST_FILE = MyWeatherApp/Shared/Assets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
