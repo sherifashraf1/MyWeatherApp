@@ -23,11 +23,24 @@ class CountriesListViewController: UIViewController {
     
     @IBOutlet weak var tableView : UITableView!
     var tableData : Cities?
+    
+    lazy var mapBarButton: UIBarButtonItem = {
+        
+        return UIBarButtonItem(title: "Map", style: .plain, target: self, action: #selector(openMap))
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Countries"
+        navigationItem.setLeftBarButton(mapBarButton, animated: true)
+        
         tableView.register(SubtitleTableViewCell.self, forCellReuseIdentifier: "UITabelViewCell")
         loadData()
+    }
+    
+    @objc func openMap(){
+        let vc = MapViewController()
+        present(vc, animated: true, completion: nil)
     }
     
     func loadData(){
