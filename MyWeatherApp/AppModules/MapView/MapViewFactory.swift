@@ -20,6 +20,8 @@ struct MapViewFactory {
     static func makeMapWith(_ coordinates : Coordinates ) -> UIViewController {
         let vc = MapViewController()
         vc.camera = GMSCameraPosition.camera(withLatitude: coordinates.lat, longitude: coordinates.lon, zoom: 6.0)
+        vc.hideNavButton.title = ""
+        vc.hideNavButton.isEnabled = false
         return vc
     }
     typealias Coordinates = (lon : Double , lat : Double)
