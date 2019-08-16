@@ -8,17 +8,6 @@
 
 import UIKit
 
-class SubtitleTableViewCell: UITableViewCell {
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
 class CountriesListViewController: UIViewController {
     
     @IBOutlet weak var tableView : UITableView!
@@ -32,8 +21,8 @@ class CountriesListViewController: UIViewController {
         super.viewDidLoad()
         title = "Countries"
         navigationItem.setLeftBarButton(mapBarButton, animated: true)
-        
-        tableView.register(SubtitleTableViewCell.self, forCellReuseIdentifier: "UITabelViewCell")
+        let cell = UINib(nibName: "CountriesTableViewCell", bundle: nil)
+        tableView.register(cell.self, forCellReuseIdentifier: "UITabelViewCell")
         loadData()
     }
     
