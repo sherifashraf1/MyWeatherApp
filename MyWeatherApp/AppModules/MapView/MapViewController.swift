@@ -14,6 +14,12 @@ struct MapViewControllerFactory {
     static func makeMapWithNavigate() -> UINavigationController{
         return UINavigationController(rootViewController: MapViewController())
     }
+    
+    static func makeMapWith(_ coordinates : Coordinates ) -> UIViewController {
+        return MapViewController()
+    }
+    typealias Coordinates = (lon : Double , lat : Double)
+
 }
 
 class MapViewController: UIViewController {

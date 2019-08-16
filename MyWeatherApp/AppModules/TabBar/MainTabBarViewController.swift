@@ -13,7 +13,7 @@ class MainTabBarViewController: UITabBarController {
     lazy var countriesList: UINavigationController = {
         let vc = CountriesListViewController(nibName: "CountriesListViewController", bundle: nil)
        // vc.tabBarItem.title = "Countries"
-        vc.tabBarItem.image = #imageLiteral(resourceName: "earth")
+        vc.tabBarItem.image = #imageLiteral(resourceName: "countries")
         return UINavigationController(rootViewController: vc)
     }()
     

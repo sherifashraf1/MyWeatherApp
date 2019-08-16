@@ -21,7 +21,7 @@ class CountriesListViewController: UIViewController {
         super.viewDidLoad()
         title = "Countries"
         navigationItem.setLeftBarButton(mapBarButton, animated: true)
-        let cell = UINib(nibName: "CountriesTableViewCell", bundle: nil)
+        let cell = UINib(nibName: "CountryTableViewCell", bundle: nil)
         tableView.register(cell.self, forCellReuseIdentifier: "UITabelViewCell")
         loadData()
     }
@@ -54,11 +54,10 @@ extension CountriesListViewController : UITableViewDelegate , UITableViewDataSou
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let myTableData = tableData?[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UITabelViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UITabelViewCell", for: indexPath) as! CountryTableViewCell
 
-        cell.textLabel?.text = myTableData?.country
-        cell.detailTextLabel?.text = "\(myTableData?.coord?.lat ?? 0) ,\( myTableData?.coord?.lon ?? 0)"
-        cell.imageView?.image = #imageLiteral(resourceName: "earth")
+        cell.countryName?.text = myTableData?.country
+        cell.delegate = self
         cell.selectionStyle = .none
         return cell
     }
@@ -69,5 +68,16 @@ extension CountriesListViewController : UITableViewDelegate , UITableViewDataSou
         vc.data = selectedCountry
         navigationController?.pushViewController(vc, animated: true)
     }
+    
+}
+
+extension CountriesListViewController : TableViewCellDelegate {
+    func didTap(_ button: UIButton, cell: UITableViewCell) {
+        guard let index = tableView.indexPath(for: cell) else {return}
+        let data = tableData?[index.row]
+        let vc = MapViewControllerFactory.makeMapWith((data?.coord?.lon ?? 0 , data?.coord?.lat ?? 0))
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     
 }
