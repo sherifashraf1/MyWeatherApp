@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0C2429157FF25B7B8C42392C /* Pods_MyWeatherAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F47FB4C4E0DF3F8B85C88565 /* Pods_MyWeatherAppTests.framework */; };
 		4CCEE384A74C9F02C6A54A54 /* Pods_MyWeatherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2456A3DA2B4868071CD7802A /* Pods_MyWeatherApp.framework */; };
+		E022906223076D6C00C81B69 /* MapViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E022906123076D6C00C81B69 /* MapViewFactory.swift */; };
 		E04C9B612305154F008FC1F0 /* CountriesList.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E04C9B602305154F008FC1F0 /* CountriesList.xcassets */; };
 		E04C9B6523052514008FC1F0 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04C9B6423052514008FC1F0 /* MainTabBarViewController.swift */; };
 		E04C9B6823052ACE008FC1F0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04C9B6623052ACE008FC1F0 /* ProfileViewController.swift */; };
@@ -46,6 +47,7 @@
 		2DD140D3ACDF584580C6B363 /* Pods-MyWeatherAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyWeatherAppTests.debug.xcconfig"; path = "Target Support Files/Pods-MyWeatherAppTests/Pods-MyWeatherAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		92B67E300CCF04BB97B6DA89 /* Pods-MyWeatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyWeatherApp.debug.xcconfig"; path = "Target Support Files/Pods-MyWeatherApp/Pods-MyWeatherApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BA099576A409A70BD89875D6 /* Pods-MyWeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyWeatherApp.release.xcconfig"; path = "Target Support Files/Pods-MyWeatherApp/Pods-MyWeatherApp.release.xcconfig"; sourceTree = "<group>"; };
+		E022906123076D6C00C81B69 /* MapViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewFactory.swift; sourceTree = "<group>"; };
 		E04C9B602305154F008FC1F0 /* CountriesList.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CountriesList.xcassets; sourceTree = "<group>"; };
 		E04C9B6423052514008FC1F0 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		E04C9B6623052ACE008FC1F0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				E0C9C7F42305F52E00C0C72B /* MapViewController.swift */,
+				E022906123076D6C00C81B69 /* MapViewFactory.swift */,
 			);
 			path = MapView;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 				E04C9B6523052514008FC1F0 /* MainTabBarViewController.swift in Sources */,
 				E04C9B6F230534D0008FC1F0 /* WeatherDetailsViewController.swift in Sources */,
 				E04C9B6823052ACE008FC1F0 /* ProfileViewController.swift in Sources */,
+				E022906223076D6C00C81B69 /* MapViewFactory.swift in Sources */,
 				E08E4BCF23050569005D2F6C /* CountriesListViewController.swift in Sources */,
 				E08E4BD523050C57005D2F6C /* CityModel.swift in Sources */,
 				E0C9C7F52305F52E00C0C72B /* MapViewController.swift in Sources */,

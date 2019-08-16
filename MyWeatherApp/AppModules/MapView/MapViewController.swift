@@ -9,23 +9,15 @@
 import UIKit
 import GoogleMaps
 
-
-struct MapViewControllerFactory {
-    static func makeMapWithNavigate() -> UINavigationController{
-        return UINavigationController(rootViewController: MapViewController())
-    }
-    
-    static func makeMapWith(_ coordinates : Coordinates ) -> UIViewController {
-        return MapViewController()
-    }
-    typealias Coordinates = (lon : Double , lat : Double)
-
-}
-
 class MapViewController: UIViewController {
 
     lazy var hideNavButton: UIBarButtonItem = {
         return UIBarButtonItem(title: "Hide", style: .done, target: self, action: #selector(dismissMapView))
+    }()
+    
+    lazy var camera: GMSCameraPosition = {
+        let camera = GMSCameraPosition.camera(withLatitude: 30.0444, longitude: 31.2357, zoom: 6.0)
+        return camera
     }()
     
     @objc func dismissMapView(){
@@ -38,7 +30,6 @@ class MapViewController: UIViewController {
         navigationItem.setRightBarButton(hideNavButton, animated: true)
         // Create a GMSCameraPosition that tells the map to display the
         // coordinate -33.86,151.20 at zoom level 6.
-        let camera = GMSCameraPosition.camera(withLatitude: 30.0444, longitude: 31.2357, zoom: 6.0)
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         view = mapView
         

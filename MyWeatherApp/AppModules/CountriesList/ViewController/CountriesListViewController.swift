@@ -27,7 +27,7 @@ class CountriesListViewController: UIViewController {
     }
     
     @objc func openMap(){
-        let vc = MapViewControllerFactory.makeMapWithNavigate()
+        let vc = MapViewFactory.makeMapWithNavigate()
         present(vc, animated: true, completion: nil)
     }
     
@@ -75,7 +75,7 @@ extension CountriesListViewController : TableViewCellDelegate {
     func didTap(_ button: UIButton, cell: UITableViewCell) {
         guard let index = tableView.indexPath(for: cell) else {return}
         let data = tableData?[index.row]
-        let vc = MapViewControllerFactory.makeMapWith((data?.coord?.lon ?? 0 , data?.coord?.lat ?? 0))
+        let vc = MapViewFactory.makeMapWith((data?.coord?.lon ?? 0 , data?.coord?.lat ?? 0))
         navigationController?.pushViewController(vc, animated: true)
     }
     

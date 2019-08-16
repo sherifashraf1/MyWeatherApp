@@ -18,6 +18,7 @@ class CountryTableViewCell: UITableViewCell {
     @IBOutlet weak var countryName: UILabel!
     @IBOutlet weak var mapBtn: UIButton!
     weak var delegate : TableViewCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 
