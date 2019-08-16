@@ -25,7 +25,6 @@ class CountriesListViewController: UIViewController {
     var tableData : Cities?
     
     lazy var mapBarButton: UIBarButtonItem = {
-        
         return UIBarButtonItem(title: "Map", style: .plain, target: self, action: #selector(openMap))
     }()
     
@@ -39,7 +38,7 @@ class CountriesListViewController: UIViewController {
     }
     
     @objc func openMap(){
-        let vc = MapViewController()
+        let vc = MapViewControllerFactory.makeMapWithNavigate()
         present(vc, animated: true, completion: nil)
     }
     

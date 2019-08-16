@@ -8,12 +8,28 @@
 
 import UIKit
 import GoogleMaps
-import CoreLocation
+
+
+struct MapViewControllerFactory {
+    static func makeMapWithNavigate() -> UINavigationController{
+        return UINavigationController(rootViewController: MapViewController())
+    }
+}
+
 class MapViewController: UIViewController {
 
+    lazy var hideNavButton: UIBarButtonItem = {
+        return UIBarButtonItem(title: "Hide", style: .done, target: self, action: #selector(dismissMapView))
+    }()
+    
+    @objc func dismissMapView(){
+        dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "Map View"
+        navigationItem.setRightBarButton(hideNavButton, animated: true)
         // Create a GMSCameraPosition that tells the map to display the
         // coordinate -33.86,151.20 at zoom level 6.
         let camera = GMSCameraPosition.camera(withLatitude: 30.0444, longitude: 31.2357, zoom: 6.0)
