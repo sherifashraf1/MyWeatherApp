@@ -10,7 +10,6 @@ import Foundation
 import Alamofire
 
 
-
 /// Response completion handler beautified.
 typealias CallResponse<T> = ((Result<T>) -> Void)?
 
@@ -18,12 +17,11 @@ typealias CallResponse<T> = ((Result<T>) -> Void)?
 /// API protocol, The alamofire wrapper
 protocol APIRequestHandler: HandleAlamoResponse {
     
-    
 }
 
 extension APIRequestHandler where Self: URLRequestBuilder {
 
-    func send<T: CodableInit>(_ decoder: T.Type, data: WeatherResponse? = nil, progress: ((Progress) -> Void)? = nil, then: CallResponse<T>) {
+    func send<T: CodableInit>(_ decoder: T.Type, data: UploadData? = nil, progress: ((Progress) -> Void)? = nil, then: CallResponse<T>) {
         if let data = data {
             uploadToServerWith(decoder, data: data, request: self, parameters: self.parameters, progress: progress, then: then)
         }else{
@@ -46,10 +44,9 @@ extension APIRequestHandler where Self: URLRequestBuilder {
     }
 }
 
-
 extension APIRequestHandler {
     
-    private func uploadToServerWith<T: CodableInit>(_ decoder: T.Type, data: WeatherResponse, request: URLRequestConvertible, parameters: Parameters?, progress: ((Progress) -> Void)?, then: CallResponse<T>) {
+    private func uploadToServerWith<T: CodableInit>(_ decoder: T.Type, data: UploadData, request: URLRequestConvertible, parameters: Parameters?, progress: ((Progress) -> Void)?, then: CallResponse<T>) {
         
         upload(multipartFormData: { (mul) in
             mul.append(data.data, withName: data.name, fileName: data.fileName, mimeType: data.mimeType)

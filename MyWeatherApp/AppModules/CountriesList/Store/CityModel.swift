@@ -12,11 +12,11 @@ import Foundation
 struct CityModel: Codable {
     let id: Int?
     let name, country: String?
-    let coord: Coord?
+    let coord: Coordinates?
 }
 
 // MARK: - Coord
-struct Coord: Codable {
+struct Coordinates: Codable {
     let lon, lat: Double?
 }
 
