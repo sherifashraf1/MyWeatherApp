@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import GooglePlaces
 import GoogleMaps
 
 struct MapViewFactory {
@@ -22,6 +21,8 @@ struct MapViewFactory {
         vc.camera = GMSCameraPosition.camera(withLatitude: coordinates.lat, longitude: coordinates.lon, zoom: 6.0)
         vc.hideNavButton.title = ""
         vc.hideNavButton.isEnabled = false
+        vc.marker.position = CLLocationCoordinate2D(latitude: coordinates.lat, longitude: coordinates.lon)
+        
         return vc
     }
     typealias Coordinates = (lon : Double , lat : Double)

@@ -17,6 +17,21 @@ class MapViewController: UIViewController {
     
     var camera: GMSCameraPosition?
     
+    lazy var mapView: GMSMapView = {
+        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera!)
+        return mapView
+    }()
+    
+    lazy var marker: GMSMarker = {
+        // Creates a marker in the center of the map.
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2D(latitude: 30.0444, longitude: 31.2357)
+        marker.title = "Cairo"
+        marker.snippet = "Egypt"
+        marker.map = mapView
+        return marker
+    }()
+    
     @objc func dismissMapView(){
         dismiss(animated: true, completion: nil)
     }
@@ -25,18 +40,8 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         title = "Map View"
         navigationItem.setRightBarButton(hideNavButton, animated: true)
-        // Create a GMSCameraPosition that tells the map to display the
-        // coordinate -33.86,151.20 at zoom level 6.
-        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera!)
         view = mapView
-        
-        // Creates a marker in the center of the map.
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: 30.0444, longitude: 31.2357)
-        marker.title = "Cairo"
-        marker.snippet = "Egypt"
         marker.map = mapView
-
 
     }
     

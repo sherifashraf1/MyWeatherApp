@@ -20,17 +20,18 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="MSE-p1-Oiv">
-                        <rect key="frame" x="8" y="8" width="327" height="52.5"/>
+                        <rect key="frame" x="16" y="8" width="311" height="25"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdv-wl-FCY">
-                                <rect key="frame" x="0.0" y="0.0" width="272" height="52.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="256" height="25"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yu4-aH-KDZ">
-                                <rect key="frame" x="277" y="0.0" width="50" height="52.5"/>
+                                <rect key="frame" x="261" y="0.0" width="50" height="25"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Uua-CL-iTt"/>
                                     <constraint firstAttribute="width" constant="50" id="rSm-Kw-knr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -43,9 +44,9 @@
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="MSE-p1-Oiv" secondAttribute="trailing" constant="8" id="6KL-T1-BM2"/>
+                    <constraint firstAttribute="trailing" secondItem="MSE-p1-Oiv" secondAttribute="trailing" constant="16" id="6KL-T1-BM2"/>
                     <constraint firstItem="MSE-p1-Oiv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="CUx-V9-dfU"/>
-                    <constraint firstItem="MSE-p1-Oiv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Yb8-7t-lg3"/>
+                    <constraint firstItem="MSE-p1-Oiv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Yb8-7t-lg3"/>
                     <constraint firstAttribute="bottom" secondItem="MSE-p1-Oiv" secondAttribute="bottom" constant="8" id="eVx-gw-ryK"/>
                 </constraints>
             </tableViewCellContentView>
