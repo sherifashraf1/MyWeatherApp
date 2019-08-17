@@ -12,7 +12,7 @@
 
 import Foundation
 
-// MARK: - WeatherResponse
+// MARK: - WeatherResponse //to decode the data
 struct WeatherResponse: CodableInit {
     let coord: Coord?
     let weather: [Weather]?
