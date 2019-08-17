@@ -21,16 +21,16 @@ struct WeatherResponse: CodableInit {
     let visibility: Int?
     let wind: Wind?
     let clouds: Clouds?
-    let dt: Int?
+    let dt: Double?
     let sys: Sys?
     let id: Int?
     let name: String?
-    let cod: Int?
+    let cod: Double?
 }
 
 // MARK: - Clouds
 struct Clouds: Codable {
-    let all: Int?
+    let all: Double?
 }
 
 // MARK: - Coord
@@ -41,7 +41,7 @@ struct Coord: Codable {
 // MARK: - Main
 struct Main: Codable {
     let temp: Double?
-    let pressure, humidity: Int?
+    let pressure, humidity: Double?
     let tempMin, tempMax: Double?
     
     enum CodingKeys: String, CodingKey {
@@ -56,7 +56,7 @@ struct Sys: Codable {
     let type, id: Int?
     let message: Double?
     let country: String?
-    let sunrise, sunset: Int?
+    let sunrise, sunset: Double?
 }
 
 // MARK: - Weather
@@ -74,6 +74,6 @@ struct Weather: Codable {
 // MARK: - Wind
 struct Wind: Codable {
     let speed: Double?
-    let deg: Int?
+    let deg: Double?
 }
 
