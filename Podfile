@@ -8,6 +8,7 @@ target 'MyWeatherApp' do
   # Pods for MyWeatherApp
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod 'Alamofire'
 
   target 'MyWeatherAppTests' do
     inherit! :search_paths
