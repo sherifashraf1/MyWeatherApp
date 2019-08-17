@@ -51,7 +51,7 @@ extension URLRequestBuilder {
     
     var defaultParams: Parameters {
         var param = Parameters()
-        param["APIKEY"] = APIToken
+        param["appid"] = APIToken
         return param
     }
     
