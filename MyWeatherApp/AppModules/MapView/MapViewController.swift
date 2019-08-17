@@ -10,7 +10,7 @@ import UIKit
 import GoogleMaps
 import CoreLocation
 class MapViewController: UIViewController {
-
+    
     lazy var hideNavButton: UIBarButtonItem = {
         return UIBarButtonItem(title: "Hide", style: .done, target: self, action: #selector(dismissMapView))
     }()
@@ -28,7 +28,6 @@ class MapViewController: UIViewController {
         marker.position = CLLocationCoordinate2D(latitude: 30.0444, longitude: 31.2357)
         marker.title = "Cairo"
         marker.snippet = "Egypt"
-        marker.map = mapView
         return marker
     }()
     
@@ -42,7 +41,8 @@ class MapViewController: UIViewController {
         navigationItem.setRightBarButton(hideNavButton, animated: true)
         view = mapView
         marker.map = mapView
-
+        
+        
     }
     
 }

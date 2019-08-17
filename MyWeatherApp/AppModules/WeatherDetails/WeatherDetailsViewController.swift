@@ -9,15 +9,15 @@
 import UIKit
 
 class WeatherDetailsViewController: UIViewController {
-
     var data : CityModel?
-    @IBOutlet weak var countryName : UILabel!
     
-    
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var currentDegreeLabel: UILabel!
+    @IBOutlet weak var minDegreeLabel: UILabel!
+    @IBOutlet weak var maxDegreeLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        countryName.text = data?.country
+    
     }
 
 
