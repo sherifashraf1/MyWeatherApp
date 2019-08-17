@@ -31,6 +31,7 @@
 		E08E4BD023050569005D2F6C /* CountriesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E08E4BCE23050569005D2F6C /* CountriesListViewController.xib */; };
 		E08E4BD323050C08005D2F6C /* city.list.json in Resources */ = {isa = PBXBuildFile; fileRef = E08E4BD223050C08005D2F6C /* city.list.json */; };
 		E08E4BD523050C57005D2F6C /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08E4BD423050C57005D2F6C /* CityModel.swift */; };
+		E095984E2307D77900979DBD /* WeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E095984D2307D77900979DBD /* WeatherRequest.swift */; };
 		E0A88B7D230660110003D75B /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A88B7B230660110003D75B /* CountryTableViewCell.swift */; };
 		E0A88B7E230660110003D75B /* CountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0A88B7C230660110003D75B /* CountryTableViewCell.xib */; };
 		E0C9C7F52305F52E00C0C72B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C9C7F42305F52E00C0C72B /* MapViewController.swift */; };
@@ -79,6 +80,7 @@
 		E08E4BCE23050569005D2F6C /* CountriesListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountriesListViewController.xib; sourceTree = "<group>"; };
 		E08E4BD223050C08005D2F6C /* city.list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.list.json; sourceTree = "<group>"; };
 		E08E4BD423050C57005D2F6C /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
+		E095984D2307D77900979DBD /* WeatherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRequest.swift; sourceTree = "<group>"; };
 		E0A88B7B230660110003D75B /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
 		E0A88B7C230660110003D75B /* CountryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryTableViewCell.xib; sourceTree = "<group>"; };
 		E0C9C7F42305F52E00C0C72B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				E022906D2307B95300C81B69 /* WeatherResponse.swift */,
+				E095984D2307D77900979DBD /* WeatherRequest.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 				E022906A2307ADFE00C81B69 /* ResponseHandler.swift in Sources */,
 				E0C9C7F72305F73800C0C72B /* StaticAPIsKeys.swift in Sources */,
 				E08E4BA92304FEEC005D2F6C /* AppDelegate.swift in Sources */,
+				E095984E2307D77900979DBD /* WeatherRequest.swift in Sources */,
 				E04C9B6523052514008FC1F0 /* MainTabBarViewController.swift in Sources */,
 				E022906B2307ADFE00C81B69 /* URLRequestBuilder.swift in Sources */,
 				E04C9B6F230534D0008FC1F0 /* WeatherDetailsViewController.swift in Sources */,

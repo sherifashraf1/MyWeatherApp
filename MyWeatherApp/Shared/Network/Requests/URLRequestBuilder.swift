@@ -34,7 +34,7 @@ protocol URLRequestBuilder: URLRequestConvertible, APIRequestHandler {
 extension URLRequestBuilder {
 
     var mainURL: URL  {
-        return URL(string: "https://samples.openweathermap.org/data/2.5")!
+        return URL(string: "http://openweathermap.org/data/2.5/")!
     }
     
     var requestURL: URL {
