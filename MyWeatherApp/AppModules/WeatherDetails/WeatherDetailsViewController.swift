@@ -17,7 +17,18 @@ class WeatherDetailsViewController: UIViewController {
     @IBOutlet weak var maxDegreeLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+          loadData()
+    }
     
+    func loadData(){
+        WeatherRequest.weather(id: data?.id ?? 0).send(WeatherResponse.self) { (response) in
+            switch response{
+            case .success(let value):
+                print(value)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 
 

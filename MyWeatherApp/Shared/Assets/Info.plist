@@ -46,6 +46,22 @@
 		<string>googlechromes</string>
 		<string>comgooglemaps</string>
 	</array>
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <true/>
+        <key>NSExceptionDomains</key>
+        <dict>
+            <key>yourdomain.com</key>
+            <dict>
+                <key>NSIncludesSubdomains</key>
+                <true/>
+                <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+                <false/>
+            </dict>
+        </dict>
+    </dict>
+
     
     <key>NSLocationAlwaysUsageDescription</key>
     <string>Your location is required for xyz benefits for you</string>

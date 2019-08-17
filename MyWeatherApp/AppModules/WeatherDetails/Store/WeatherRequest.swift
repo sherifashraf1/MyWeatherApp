@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 enum WeatherRequest : URLRequestBuilder {
-    case weather(id : String)
+    case weather(id : Int)
     case weatherLocation(cooreinates : Coordinates)
     var path: String {
         switch self {
