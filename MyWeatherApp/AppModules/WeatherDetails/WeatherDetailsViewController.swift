@@ -23,16 +23,18 @@ class WeatherDetailsViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         request?.cancelRequest()
+        //currentDegreeLabel.text = ""
     }
     
     fileprivate func handleResponse(_ response: ServerResponse<WeatherResponse>) {
         switch response{
         case .success(let value):
-            print(value)
+            guard let temp = value.main?.temp,let lat = value.coord?.lat, let lon = value.coord?.lon   else {return}
+
             descriptionLabel.text = value.name
-            currentDegreeLabel.text = "\(value.main?.temp?.string ?? "20")"+"℃"
-            latitudeLabel.text = value.coord?.lat?.string
-            longitudeLabel.text = value.coord?.lon?.string
+            currentDegreeLabel.text = "\(TempConvertor.celsiusToFahrenheit(tempInC: temp).rounded().string)"+"℃"
+            latitudeLabel.text  =  lat.string
+            longitudeLabel.text = lon.string
         case .failure(let error):
             print(error)
         }
@@ -46,8 +48,5 @@ class WeatherDetailsViewController: UIViewController {
     }
 
 }
-extension Double {
-    var string : String{
-        return String(describing: self)
-    }
-}
+
+

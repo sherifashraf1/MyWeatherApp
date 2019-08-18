@@ -34,6 +34,8 @@
 		E095984E2307D77900979DBD /* WeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E095984D2307D77900979DBD /* WeatherRequest.swift */; };
 		E0A88B7D230660110003D75B /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A88B7B230660110003D75B /* CountryTableViewCell.swift */; };
 		E0A88B7E230660110003D75B /* CountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0A88B7C230660110003D75B /* CountryTableViewCell.xib */; };
+		E0C6620223091632002B0BCF /* Double+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C6620123091632002B0BCF /* Double+String.swift */; };
+		E0C66205230916E3002B0BCF /* TempConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C66204230916E3002B0BCF /* TempConvertor.swift */; };
 		E0C9C7F52305F52E00C0C72B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C9C7F42305F52E00C0C72B /* MapViewController.swift */; };
 		E0C9C7F72305F73800C0C72B /* StaticAPIsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C9C7F62305F73800C0C72B /* StaticAPIsKeys.swift */; };
 /* End PBXBuildFile section */
@@ -83,6 +85,8 @@
 		E095984D2307D77900979DBD /* WeatherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRequest.swift; sourceTree = "<group>"; };
 		E0A88B7B230660110003D75B /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
 		E0A88B7C230660110003D75B /* CountryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryTableViewCell.xib; sourceTree = "<group>"; };
+		E0C6620123091632002B0BCF /* Double+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+String.swift"; sourceTree = "<group>"; };
+		E0C66204230916E3002B0BCF /* TempConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempConvertor.swift; sourceTree = "<group>"; };
 		E0C9C7F42305F52E00C0C72B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E0C9C7F62305F73800C0C72B /* StaticAPIsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticAPIsKeys.swift; sourceTree = "<group>"; };
 		F47FB4C4E0DF3F8B85C88565 /* Pods_MyWeatherAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyWeatherAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -237,6 +241,8 @@
 		E08E4BCA2305001D005D2F6C /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				E0C66203230916C5002B0BCF /* Logic */,
+				E0C662002309160B002B0BCF /* Extensions */,
 				E02290632307AD7900C81B69 /* Network */,
 				E08E4BCB2305002B005D2F6C /* Assets */,
 			);
@@ -308,6 +314,22 @@
 				E0A88B7C230660110003D75B /* CountryTableViewCell.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E0C662002309160B002B0BCF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E0C6620123091632002B0BCF /* Double+String.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E0C66203230916C5002B0BCF /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				E0C66204230916E3002B0BCF /* TempConvertor.swift */,
+			);
+			path = Logic;
 			sourceTree = "<group>";
 		};
 		E0C9C7F32305F4EB00C0C72B /* MapView */ = {
@@ -511,6 +533,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0C66205230916E3002B0BCF /* TempConvertor.swift in Sources */,
 				E02290682307ADFE00C81B69 /* APIRequestHandler.swift in Sources */,
 				E022906E2307B95300C81B69 /* WeatherResponse.swift in Sources */,
 				E0A88B7D230660110003D75B /* CountryTableViewCell.swift in Sources */,
@@ -522,6 +545,7 @@
 				E04C9B6523052514008FC1F0 /* MainTabBarViewController.swift in Sources */,
 				E022906B2307ADFE00C81B69 /* URLRequestBuilder.swift in Sources */,
 				E04C9B6F230534D0008FC1F0 /* WeatherDetailsViewController.swift in Sources */,
+				E0C6620223091632002B0BCF /* Double+String.swift in Sources */,
 				E02290702307CEC000C81B69 /* UploadData.swift in Sources */,
 				E04C9B6823052ACE008FC1F0 /* ProfileViewController.swift in Sources */,
 				E022906223076D6C00C81B69 /* MapViewFactory.swift in Sources */,
