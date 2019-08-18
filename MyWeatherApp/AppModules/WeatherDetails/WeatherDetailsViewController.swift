@@ -13,8 +13,8 @@ class WeatherDetailsViewController: UIViewController {
     var request : WeatherRequest?
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var currentDegreeLabel: UILabel!
-    @IBOutlet weak var pressureLabel: UILabel!
-    @IBOutlet weak var humidityLabel: UILabel!
+    @IBOutlet weak var latitudeLabel: UILabel!
+    @IBOutlet weak var longitudeLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
           loadData()
@@ -29,10 +29,10 @@ class WeatherDetailsViewController: UIViewController {
         switch response{
         case .success(let value):
             print(value)
-            descriptionLabel.text = value.sys?.country
+            descriptionLabel.text = value.name
             currentDegreeLabel.text = "\(value.main?.temp?.string ?? "20")"+"℃"
-            pressureLabel.text = value.main?.pressure?.string
-            humidityLabel.text = value.main?.humidity?.string
+            latitudeLabel.text = value.coord?.lat?.string
+            longitudeLabel.text = value.coord?.lon?.string
         case .failure(let error):
             print(error)
         }
