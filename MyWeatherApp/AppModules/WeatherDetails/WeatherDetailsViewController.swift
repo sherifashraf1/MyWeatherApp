@@ -10,26 +10,34 @@ import UIKit
 
 class WeatherDetailsViewController: UIViewController {
     var data : CityModel?
-    
+    var request : WeatherRequest?
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var currentDegreeLabel: UILabel!
-    @IBOutlet weak var minDegreeLabel: UILabel!
-    @IBOutlet weak var maxDegreeLabel: UILabel!
+    @IBOutlet weak var pressureLabel: UILabel!
+    @IBOutlet weak var humidityLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
           loadData()
     }
     
     func loadData(){
-        WeatherRequest.weather(id: data?.id ?? 0).send(WeatherResponse.self) { (response) in
+        request = WeatherRequest.weather(id: data?.id ?? 0)
+        request?.send(WeatherResponse.self) { (response) in
             switch response{
             case .success(let value):
-                print(value)
+                self.descriptionLabel.text = value.sys?.country
+                self.currentDegreeLabel.text = value.main?.temp?.string
+                self.pressureLabel.text = value.main?.pressure?.string ?? "0"
+                self.humidityLabel.text = value.main?.humidity?.string ?? "0"
             case .failure(let error):
                 print(error)
             }
         }
     }
 
-
+}
+extension Double {
+    var string : String{
+        return String(describing: self)
+    }
 }
