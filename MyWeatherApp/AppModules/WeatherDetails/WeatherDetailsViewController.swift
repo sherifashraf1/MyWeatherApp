@@ -16,6 +16,7 @@ class WeatherDetailsViewController: UIViewController {
     @IBOutlet weak var latitudeLabel: UILabel!
     @IBOutlet weak var longitudeLabel: UILabel!
     @IBOutlet weak var holderStackView: UIStackView!
+    @IBOutlet weak var backgroundImage : UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,9 +48,11 @@ class WeatherDetailsViewController: UIViewController {
         
     }
     func animateLabels(){
-        UIView.animate(withDuration: 0.4) {
+        UIView.animate(withDuration: 0.3) {
             self.holderStackView.subviews.forEach({ (view) in
                 view.isHidden = false
+                self.backgroundImage.alpha = 1.0
+
             })
         }
     }

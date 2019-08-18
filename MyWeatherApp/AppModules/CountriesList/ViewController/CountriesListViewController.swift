@@ -77,6 +77,7 @@ extension CountriesListViewController : TableViewCellDelegate {
         let data = tableData?[index.row]
         let vc = MapViewFactory.makeMapWith((data?.coord?.lat ?? 0 , data?.coord?.lon ?? 0))
         navigationController?.pushViewController(vc, animated: true)
+
     }
     
 }
