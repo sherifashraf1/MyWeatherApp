@@ -17,6 +17,7 @@ class WeatherDetailsViewController: UIViewController {
     @IBOutlet weak var longitudeLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Details"
           loadData()
     }
     
@@ -29,13 +30,8 @@ class WeatherDetailsViewController: UIViewController {
     fileprivate func handleResponse(_ response: ServerResponse<WeatherResponse>) {
         switch response{
         case .success(let value):
-            guard let temp = value.main?.temp,let lat = value.coord?.lat, let lon = value.coord?.lon   else {return}
-
-            descriptionLabel.text = value.name
-            currentDegreeLabel.text = "\(TempConvertor.celsiusToFahrenheit(tempInC: temp).rounded().string)"+"℃"
-            latitudeLabel.text  =  lat.string
-            longitudeLabel.text = lon.string
-        case .failure(let error):
+            fillDataToLabels(with: value)
+         case .failure(let error):
             print(error)
         }
     }
@@ -47,6 +43,17 @@ class WeatherDetailsViewController: UIViewController {
         }
     }
 
+    func fillDataToLabels(with value : WeatherResponse){
+        guard let temp = value.main?.temp,let lat = value.coord?.lat, let lon = value.coord?.lon   else {return}
+        descriptionLabel.text = value.name
+        //Show temp By Celsius
+        currentDegreeLabel.text = "\(temp.rounded().string)" + "℃"
+        //Show temp By Fahrenheit
+        //currentDegreeLabel.text = "\(TempConvertor.celsiusToFahrenheit(tempInC: temp).rounded().string)"+"℉"
+        latitudeLabel.text  =  lat.string
+        longitudeLabel.text =  lon.string
+    }
+    
 }
 
 
