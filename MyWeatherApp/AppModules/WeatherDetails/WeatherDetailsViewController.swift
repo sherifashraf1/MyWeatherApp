@@ -15,6 +15,8 @@ class WeatherDetailsViewController: UIViewController {
     @IBOutlet weak var currentDegreeLabel: UILabel!
     @IBOutlet weak var latitudeLabel: UILabel!
     @IBOutlet weak var longitudeLabel: UILabel!
+    @IBOutlet weak var holderStackView: UIStackView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Details"
@@ -31,6 +33,7 @@ class WeatherDetailsViewController: UIViewController {
         switch response{
         case .success(let value):
             fillDataToLabels(with: value)
+            animateLabels()
          case .failure(let error):
             print(error)
         }
@@ -41,8 +44,17 @@ class WeatherDetailsViewController: UIViewController {
         request?.send(WeatherResponse.self) { [weak self] (response) in
             self?.handleResponse(response)
         }
+        
+    }
+    func animateLabels(){
+        UIView.animate(withDuration: 0.4) {
+            self.holderStackView.subviews.forEach({ (view) in
+                view.isHidden = false
+            })
+        }
     }
 
+    
     func fillDataToLabels(with value : WeatherResponse){
         guard let temp = value.main?.temp,let lat = value.coord?.lat, let lon = value.coord?.lon   else {return}
         descriptionLabel.text = value.name
@@ -54,6 +66,8 @@ class WeatherDetailsViewController: UIViewController {
         longitudeLabel.text =  lon.string
     }
     
-}
+    }
+    
+
 
 
