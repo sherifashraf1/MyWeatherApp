@@ -21,15 +21,16 @@ protocol APIRequestHandler: HandleAlamoResponse {
 
 extension APIRequestHandler where Self: URLRequestBuilder {
 
-    func send<T: CodableInit>(_ decoder: T.Type, data: UploadData? = nil, progress: ((Progress) -> Void)? = nil, then: CallResponse<T>) {
+    func send<T: CodableInit>(_ decoder: T.Type, data: UploadData? = nil, progress: ((Progress) -> Void)? = nil, debug :((DataResponse<Any>)-> Void)? = nil ,then: CallResponse<T>) {
         if let data = data {
             uploadToServerWith(decoder, data: data, request: self, parameters: self.parameters, progress: progress, then: then)
         }else{
             request(self).validate().responseData {(response) in
                 self.handleResponse(response, then: then)
-            }.responseJSON { (response) in
-                    // handle debug
-                    print(response.result.value)
+            }.responseJSON { (results) in
+                debug?(results)
+                let res = results.result.value as? [String : Any]
+                print(res?["Message"] as Any)
             }
         }
     }
