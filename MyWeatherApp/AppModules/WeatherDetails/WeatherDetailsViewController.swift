@@ -40,8 +40,8 @@ class WeatherDetailsViewController: UIViewController {
     
     func loadData(){
         request = WeatherRequest.weather(id: data?.id ?? 0)
-        request?.send(WeatherResponse.self) { (response) in
-            self.handleResponse(response)
+        request?.send(WeatherResponse.self) { [weak self] (response) in
+            self?.handleResponse(response)
         }
     }
 
