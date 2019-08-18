@@ -29,6 +29,10 @@ class WeatherDetailsViewController: UIViewController {
         switch response{
         case .success(let value):
             print(value)
+            descriptionLabel.text = value.sys?.country
+            currentDegreeLabel.text = "\(value.main?.temp?.string ?? "20")"+"℃"
+            pressureLabel.text = value.main?.pressure?.string
+            humidityLabel.text = value.main?.humidity?.string
         case .failure(let error):
             print(error)
         }
