@@ -10,14 +10,26 @@ import Foundation
 import Alamofire
 
 
-/// Response completion handler beautified.
-typealias CallResponse<T> = ((Result<T>) -> Void)?
 
+
+
+
+
+/// Response completion handler beautified.
+//typealias CallResponse<T> = ((Result<T>) -> Void)?
+
+typealias CallResponse<T> = ((ServerResponse<T>) -> Void)?
 
 /// API protocol, The alamofire wrapper
 protocol APIRequestHandler: HandleAlamoResponse {
     
 }
+
+
+enum ServerResponse<T> {
+    case success(T), failure(Error)
+}
+
 
 extension APIRequestHandler where Self: URLRequestBuilder {
 
@@ -65,7 +77,7 @@ extension APIRequestHandler {
                 })
                 
             case .failure(let error):
-                then?(Result<T>.failure(error))
+                then?(ServerResponse<T>.failure(error))
             }
         }
     }

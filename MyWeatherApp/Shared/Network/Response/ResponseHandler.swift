@@ -26,13 +26,13 @@ extension HandleAlamoResponse {
     func handleResponse<T: CodableInit>(_ response: DataResponse<Data>, then: CallResponse<T>) {
         switch response.result {
         case .failure(let error):
-            then?(Result<T>.failure(error))
+            then?(ServerResponse<T>.failure(error))
         case .success(let value):
             do {
                 let modules = try T(data: value)
-                then?(Result<T>.success(modules))
+                then?(ServerResponse<T>.success(modules))
             }catch {
-                then?(Result<T>.failure(error))
+                then?(ServerResponse<T>.failure(error))
             }
         }
     }

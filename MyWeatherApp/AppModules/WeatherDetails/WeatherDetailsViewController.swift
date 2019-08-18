@@ -20,18 +20,24 @@ class WeatherDetailsViewController: UIViewController {
           loadData()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        request?.cancelRequest()
+    }
+    
+    fileprivate func handleResponse(_ response: ServerResponse<WeatherResponse>) {
+        switch response{
+        case .success(let value):
+            print(value)
+        case .failure(let error):
+            print(error)
+        }
+    }
+    
     func loadData(){
         request = WeatherRequest.weather(id: data?.id ?? 0)
         request?.send(WeatherResponse.self) { (response) in
-            switch response{
-            case .success(let value):
-                self.descriptionLabel.text = value.sys?.country
-                self.currentDegreeLabel.text = value.main?.temp?.string
-                self.pressureLabel.text = value.main?.pressure?.string ?? "0"
-                self.humidityLabel.text = value.main?.humidity?.string ?? "0"
-            case .failure(let error):
-                print(error)
-            }
+            self.handleResponse(response)
         }
     }
 
