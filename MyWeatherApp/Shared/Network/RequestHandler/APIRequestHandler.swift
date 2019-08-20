@@ -73,7 +73,7 @@ extension APIRequestHandler {
                 requestUp.responseData(completionHandler: { (results) in
                     self.handleResponse(results, then: then)
                 }).responseString(completionHandler: { (string) in
-                    print(string.result.value)
+                 //   print(string.result.value)
                 })
                 
             case .failure(let error):
