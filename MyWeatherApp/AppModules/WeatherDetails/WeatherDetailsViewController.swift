@@ -44,17 +44,6 @@ class WeatherDetailsViewController: UIViewController {
         }
     }
     
-    func fillDataToLabels(with value : WeatherResponse){
-        guard let temp = value.main?.temp,let lat = value.coord?.lat, let lon = value.coord?.lon   else {return}
-//        descriptionLabel.text = value.name
-//        //Show temp By Celsius
-//        currentDegreeLabel.text = "\(temp.rounded().string)" + "℃"
-//        //Show temp By Fahrenheit
-//        //currentDegreeLabel.text = "\(TempConvertor.celsiusToFahrenheit(tempInC: temp).rounded().string)"+"℉"
-//        latitudeLabel.text  =  lat.string
-//        longitudeLabel.text =  lon.string
-    }
-    
     func fillViewData(data : WeatherCreatedData) {
         descriptionLabel.text = data.description
         currentDegreeLabel.text = data.currentDegree
@@ -94,5 +83,17 @@ class WeatherDetailsViewModel{
         }
     }
 
+    
+    func fillDataToLabels(with value : WeatherResponse){
+        guard let temp = value.main?.temp,let lat = value.coord?.lat, let lon = value.coord?.lon   else {return}
+        descriptionLabel.text = value.name
+        //Show temp By Celsius
+        currentDegreeLabel.text = "\(temp.rounded().string)" + "℃"
+        //Show temp By Fahrenheit
+        //currentDegreeLabel.text = "\(TempConvertor.celsiusToFahrenheit(tempInC: temp).rounded().string)"+"℉"
+        latitudeLabel.text  =  lat.string
+        longitudeLabel.text =  lon.string
+    }
+    
     
 }
