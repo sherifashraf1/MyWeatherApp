@@ -52,11 +52,13 @@ class WeatherDetailsViewController: UIViewController {
     }
 
 
-    struct WeatherCreatedData {
-        let description, currentDegree, lat, lon : String
-    }
     
-    
+}
+
+struct WeatherCreatedData {
+    let description, currentDegree, lat, lon : String?
+}
+
 class WeatherDetailsViewModel{
     var data : CityModel?
     var request : WeatherRequest?
@@ -69,7 +71,7 @@ class WeatherDetailsViewModel{
         
     }
     
-    func cancelLoadingData{
+    func cancelLoadingData(){
         request?.cancelRequest()
     }
 
@@ -84,16 +86,11 @@ class WeatherDetailsViewModel{
     }
 
     
-    func fillDataToLabels(with value : WeatherResponse){
-        guard let temp = value.main?.temp,let lat = value.coord?.lat, let lon = value.coord?.lon   else {return}
-        descriptionLabel.text = value.name
-        //Show temp By Celsius
-        currentDegreeLabel.text = "\(temp.rounded().string)" + "℃"
-        //Show temp By Fahrenheit
-        //currentDegreeLabel.text = "\(TempConvertor.celsiusToFahrenheit(tempInC: temp).rounded().string)"+"℉"
-        latitudeLabel.text  =  lat.string
-        longitudeLabel.text =  lon.string
+    func fillDataToLabels(with value : WeatherResponse) -> WeatherCreatedData {
+        guard let temp = value.main?.temp,let lat = value.coord?.lat, let lon = value.coord?.lon   else {return WeatherCreatedData(description: nil, currentDegree: nil, lat: nil, lon: nil)}
+        return WeatherCreatedData(description: value.name, currentDegree: "\(temp.rounded().string)" + "℃", lat:  lat.string, lon: lon.string)
+  
     }
     
-    
 }
+
