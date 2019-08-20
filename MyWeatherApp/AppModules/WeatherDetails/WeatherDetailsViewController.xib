@@ -27,8 +27,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weather" translatesAutoresizingMaskIntoConstraints="NO" id="gDc-Ln-bDK">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414.00000000000011" height="896"/>
                 </imageView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="x5D-xx-bup">
+                    <rect key="frame" x="197" y="438" width="20" height="20"/>
+                </activityIndicatorView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="grT-2R-QoQ">
                     <rect key="frame" x="207" y="94" width="0.0" height="0.0"/>
                     <subviews>
@@ -85,8 +88,10 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="x5D-xx-bup" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="17b-5C-y0S"/>
                 <constraint firstAttribute="bottom" secondItem="gDc-Ln-bDK" secondAttribute="bottom" id="UtQ-sy-ux2"/>
                 <constraint firstItem="grT-2R-QoQ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="cxb-1U-qRU"/>
+                <constraint firstItem="x5D-xx-bup" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="eFg-Cw-qK9"/>
                 <constraint firstItem="gDc-Ln-bDK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fVF-Qb-IWE"/>
                 <constraint firstItem="gDc-Ln-bDK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="kpG-fn-0Qh"/>
                 <constraint firstItem="grT-2R-QoQ" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="mLv-56-CnC"/>

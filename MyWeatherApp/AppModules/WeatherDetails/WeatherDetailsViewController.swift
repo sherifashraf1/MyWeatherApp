@@ -8,7 +8,15 @@
 
 import UIKit
 
-class WeatherDetailsViewController: UIViewController {
+class WeatherDetailsViewController: UIViewController , WeatherDetailsViewModelDelegate {
+    func startLoadingIndicator() {
+    
+    }
+    
+    func stopLoadingIndicator() {
+        <#code#>
+    }
+    
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var currentDegreeLabel: UILabel!
     @IBOutlet weak var latitudeLabel: UILabel!
@@ -18,28 +26,26 @@ class WeatherDetailsViewController: UIViewController {
     
     lazy var viewModel: WeatherDetailsViewModel = {
         let vm = WeatherDetailsViewModel()
+        vm.delegate = self
         return vm
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Details"
-          viewModel.loadData()
+        viewModel.loadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        //currentDegreeLabel.text = ""
+        viewModel.cancelDataLoading()
     }
 
-    
     func animateLabels(){
         UIView.animate(withDuration: 0.3) {
             self.holderStackView.subviews.forEach({ (view) in
                 view.isHidden = false
                 self.backgroundImage.alpha = 1.0
-
             })
         }
     }
@@ -50,47 +56,5 @@ class WeatherDetailsViewController: UIViewController {
         latitudeLabel.text = data.lat
         longitudeLabel.text = data.lon
     }
-
-
     
 }
-
-struct WeatherCreatedData {
-    let description, currentDegree, lat, lon : String?
-}
-
-class WeatherDetailsViewModel{
-    var data : CityModel?
-    var request : WeatherRequest?
-
-    func loadData(){
-        request = WeatherRequest.weather(id: data?.id ?? 0)
-        request?.send(WeatherResponse.self) { [weak self] (response) in
-            self?.handleResponse(response)
-        }
-        
-    }
-    
-    func cancelLoadingData(){
-        request?.cancelRequest()
-    }
-
-    fileprivate func handleResponse(_ response: ServerResponse<WeatherResponse>) {
-        switch response{
-        case .success(let value):
-            fillDataToLabels(with: value)
-            animateLabels()
-        case .failure(let error):
-            print(error)
-        }
-    }
-
-    
-    func fillDataToLabels(with value : WeatherResponse) -> WeatherCreatedData {
-        guard let temp = value.main?.temp,let lat = value.coord?.lat, let lon = value.coord?.lon   else {return WeatherCreatedData(description: nil, currentDegree: nil, lat: nil, lon: nil)}
-        return WeatherCreatedData(description: value.name, currentDegree: "\(temp.rounded().string)" + "℃", lat:  lat.string, lon: lon.string)
-  
-    }
-    
-}
-

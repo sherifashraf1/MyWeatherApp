@@ -37,6 +37,8 @@
 		E0C6620223091632002B0BCF /* Double+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C6620123091632002B0BCF /* Double+String.swift */; };
 		E0C66205230916E3002B0BCF /* TempConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C66204230916E3002B0BCF /* TempConvertor.swift */; };
 		E0C6620723091DF3002B0BCF /* WeatherDetails.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0C6620623091DF3002B0BCF /* WeatherDetails.xcassets */; };
+		E0C90174230BB47400B3DF60 /* WeatherDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C90173230BB47400B3DF60 /* WeatherDetailsViewModel.swift */; };
+		E0C90176230BB6F100B3DF60 /* WeatherCreatedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C90175230BB6F100B3DF60 /* WeatherCreatedData.swift */; };
 		E0C9C7F52305F52E00C0C72B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C9C7F42305F52E00C0C72B /* MapViewController.swift */; };
 		E0C9C7F72305F73800C0C72B /* StaticAPIsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C9C7F62305F73800C0C72B /* StaticAPIsKeys.swift */; };
 /* End PBXBuildFile section */
@@ -89,6 +91,8 @@
 		E0C6620123091632002B0BCF /* Double+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+String.swift"; sourceTree = "<group>"; };
 		E0C66204230916E3002B0BCF /* TempConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempConvertor.swift; sourceTree = "<group>"; };
 		E0C6620623091DF3002B0BCF /* WeatherDetails.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = WeatherDetails.xcassets; sourceTree = "<group>"; };
+		E0C90173230BB47400B3DF60 /* WeatherDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsViewModel.swift; sourceTree = "<group>"; };
+		E0C90175230BB6F100B3DF60 /* WeatherCreatedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCreatedData.swift; sourceTree = "<group>"; };
 		E0C9C7F42305F52E00C0C72B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E0C9C7F62305F73800C0C72B /* StaticAPIsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticAPIsKeys.swift; sourceTree = "<group>"; };
 		F47FB4C4E0DF3F8B85C88565 /* Pods_MyWeatherAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyWeatherAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,6 +153,7 @@
 			children = (
 				E022906D2307B95300C81B69 /* WeatherResponse.swift */,
 				E095984D2307D77900979DBD /* WeatherRequest.swift */,
+				E0C90175230BB6F100B3DF60 /* WeatherCreatedData.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 				E04C9B6D230534D0008FC1F0 /* WeatherDetailsViewController.swift */,
 				E04C9B6E230534D0008FC1F0 /* WeatherDetailsViewController.xib */,
 				E0C6620623091DF3002B0BCF /* WeatherDetails.xcassets */,
+				E0C90173230BB47400B3DF60 /* WeatherDetailsViewModel.swift */,
 			);
 			path = WeatherDetails;
 			sourceTree = "<group>";
@@ -543,6 +549,7 @@
 				E0A88B7D230660110003D75B /* CountryTableViewCell.swift in Sources */,
 				E02290692307ADFE00C81B69 /* CodableInit.swift in Sources */,
 				E022906A2307ADFE00C81B69 /* ResponseHandler.swift in Sources */,
+				E0C90174230BB47400B3DF60 /* WeatherDetailsViewModel.swift in Sources */,
 				E0C9C7F72305F73800C0C72B /* StaticAPIsKeys.swift in Sources */,
 				E08E4BA92304FEEC005D2F6C /* AppDelegate.swift in Sources */,
 				E095984E2307D77900979DBD /* WeatherRequest.swift in Sources */,
@@ -555,6 +562,7 @@
 				E022906223076D6C00C81B69 /* MapViewFactory.swift in Sources */,
 				E08E4BCF23050569005D2F6C /* CountriesListViewController.swift in Sources */,
 				E08E4BD523050C57005D2F6C /* CityModel.swift in Sources */,
+				E0C90176230BB6F100B3DF60 /* WeatherCreatedData.swift in Sources */,
 				E0C9C7F52305F52E00C0C72B /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
