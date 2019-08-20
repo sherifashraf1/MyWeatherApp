@@ -70,7 +70,7 @@ class WeatherDetailsViewController: UIViewController {
     }
     
     }
+
+class WeatherDetailsViewModel{
     
-
-
-
+}
