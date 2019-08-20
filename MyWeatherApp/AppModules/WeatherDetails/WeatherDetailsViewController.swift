@@ -10,13 +10,14 @@ import UIKit
 
 class WeatherDetailsViewController: UIViewController , WeatherDetailsViewModelDelegate {
     func startLoadingIndicator() {
-    
+      activityIndicator.startAnimating()
     }
     
     func stopLoadingIndicator() {
-        <#code#>
+        activityIndicator.stopAnimating()
     }
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var currentDegreeLabel: UILabel!
     @IBOutlet weak var latitudeLabel: UILabel!

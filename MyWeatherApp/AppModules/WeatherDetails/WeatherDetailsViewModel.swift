@@ -16,13 +16,14 @@ protocol WeatherDetailsViewModelDelegate: class{
 }
 
 class WeatherDetailsViewModel{
-    private var data: CityModel?
+//    private var data: CityModel?
     private var request: WeatherRequest?
+    var cityID : Int?
     weak var delegate: WeatherDetailsViewModelDelegate?
     
     func loadData(){
         delegate?.startLoadingIndicator()
-        request = WeatherRequest.weather(id: data?.id ?? 0)
+        request = WeatherRequest.weather(id: cityID ?? 0)
         request?.send(WeatherResponse.self) { [weak self] (response) in
             self?.handleResponse(response)
         }

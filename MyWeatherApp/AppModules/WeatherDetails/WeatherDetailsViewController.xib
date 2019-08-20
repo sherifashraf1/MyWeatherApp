@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WeatherDetailsViewController" customModule="MyWeatherApp" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="x5D-xx-bup" id="APS-mO-0WA"/>
                 <outlet property="backgroundImage" destination="gDc-Ln-bDK" id="Ql6-VU-0RX"/>
                 <outlet property="currentDegreeLabel" destination="BD2-lR-7Jh" id="ueD-fg-Nl4"/>
                 <outlet property="descriptionLabel" destination="9Zd-qV-qA3" id="7jk-XB-LNr"/>
@@ -27,9 +28,9 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weather" translatesAutoresizingMaskIntoConstraints="NO" id="gDc-Ln-bDK">
-                    <rect key="frame" x="0.0" y="0.0" width="414.00000000000011" height="896"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="x5D-xx-bup">
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="x5D-xx-bup">
                     <rect key="frame" x="197" y="438" width="20" height="20"/>
                 </activityIndicatorView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="grT-2R-QoQ">

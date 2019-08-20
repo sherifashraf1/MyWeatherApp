@@ -65,7 +65,7 @@ extension CountriesListViewController : UITableViewDelegate , UITableViewDataSou
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedCountry = tableData?[indexPath.row]
         let vc = WeatherDetailsViewController()
-        vc.data = selectedCountry
+        vc.viewModel.cityID = selectedCountry?.id
         navigationController?.pushViewController(vc, animated: true)
     }
     
