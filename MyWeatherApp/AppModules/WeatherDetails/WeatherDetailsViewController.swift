@@ -9,8 +9,6 @@
 import UIKit
 
 class WeatherDetailsViewController: UIViewController {
-    var data : CityModel?
-    var request : WeatherRequest?
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var currentDegreeLabel: UILabel!
     @IBOutlet weak var latitudeLabel: UILabel!
@@ -18,35 +16,26 @@ class WeatherDetailsViewController: UIViewController {
     @IBOutlet weak var holderStackView: UIStackView!
     @IBOutlet weak var backgroundImage : UIImageView!
     
+    
+    lazy var viewModel: WeatherDetailsViewModel = {
+        let vm = WeatherDetailsViewModel()
+        return vm
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Details"
-          loadData()
+          viewModel.loadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        request?.cancelRequest()
+        
+        viewModel.request?.cancelRequest()
         //currentDegreeLabel.text = ""
     }
+
     
-    fileprivate func handleResponse(_ response: ServerResponse<WeatherResponse>) {
-        switch response{
-        case .success(let value):
-            fillDataToLabels(with: value)
-            animateLabels()
-         case .failure(let error):
-            print(error)
-        }
-    }
-    
-    func loadData(){
-        request = WeatherRequest.weather(id: data?.id ?? 0)
-        request?.send(WeatherResponse.self) { [weak self] (response) in
-            self?.handleResponse(response)
-        }
-        
-    }
     func animateLabels(){
         UIView.animate(withDuration: 0.3) {
             self.holderStackView.subviews.forEach({ (view) in
@@ -56,21 +45,47 @@ class WeatherDetailsViewController: UIViewController {
             })
         }
     }
-
     
     func fillDataToLabels(with value : WeatherResponse){
         guard let temp = value.main?.temp,let lat = value.coord?.lat, let lon = value.coord?.lon   else {return}
-        descriptionLabel.text = value.name
-        //Show temp By Celsius
-        currentDegreeLabel.text = "\(temp.rounded().string)" + "℃"
-        //Show temp By Fahrenheit
-        //currentDegreeLabel.text = "\(TempConvertor.celsiusToFahrenheit(tempInC: temp).rounded().string)"+"℉"
-        latitudeLabel.text  =  lat.string
-        longitudeLabel.text =  lon.string
+//        descriptionLabel.text = value.name
+//        //Show temp By Celsius
+//        currentDegreeLabel.text = "\(temp.rounded().string)" + "℃"
+//        //Show temp By Fahrenheit
+//        //currentDegreeLabel.text = "\(TempConvertor.celsiusToFahrenheit(tempInC: temp).rounded().string)"+"℉"
+//        latitudeLabel.text  =  lat.string
+//        longitudeLabel.text =  lon.string
     }
     
+    func fillViewData(_ description : String, currentDegree : String, lat : String, lon : String) {
+        descriptionLabel.text = description
+        currentDegreeLabel.text = currentDegree
+        latitudeLabel.text = lat
+        longitudeLabel.text = lon
     }
 
+
 class WeatherDetailsViewModel{
+    var data : CityModel?
+    var request : WeatherRequest?
+
+    func loadData(){
+        request = WeatherRequest.weather(id: data?.id ?? 0)
+        request?.send(WeatherResponse.self) { [weak self] (response) in
+            self?.handleResponse(response)
+        }
+        
+    }
+
+    fileprivate func handleResponse(_ response: ServerResponse<WeatherResponse>) {
+        switch response{
+        case .success(let value):
+            fillDataToLabels(with: value)
+            animateLabels()
+        case .failure(let error):
+            print(error)
+        }
+    }
+
     
 }
