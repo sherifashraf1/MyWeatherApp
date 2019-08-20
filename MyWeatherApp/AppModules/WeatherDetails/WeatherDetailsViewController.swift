@@ -17,21 +17,16 @@ class WeatherDetailsViewController: UIViewController {
     @IBOutlet weak var backgroundImage : UIImageView!
     
     
-    lazy var viewModel: WeatherDetailsViewModel = {
-        let vm = WeatherDetailsViewModel()
-        return vm
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Details"
-          viewModel.loadData()
+          loadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        viewModel.request?.cancelRequest()
         //currentDegreeLabel.text = ""
     }
 
@@ -80,6 +75,10 @@ class WeatherDetailsViewModel{
             self?.handleResponse(response)
         }
         
+    }
+    
+    func cancelLoadingData{
+        request?.cancelRequest()
     }
 
     fileprivate func handleResponse(_ response: ServerResponse<WeatherResponse>) {
