@@ -35,7 +35,7 @@ class WeatherDetailsViewModel{
     }
     
     fileprivate func handleResponse(_ response: ServerResponse<WeatherResponse>) {
-        delegate?.startLoadingIndicator()
+        delegate?.stopLoadingIndicator()
         switch response{
         case .success(let value):
             let toViewData = prepareDataToView(with: value)

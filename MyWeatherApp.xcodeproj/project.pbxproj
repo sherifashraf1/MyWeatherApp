@@ -189,10 +189,9 @@
 			isa = PBXGroup;
 			children = (
 				E022906C2307B93600C81B69 /* Store */,
-				E04C9B6D230534D0008FC1F0 /* WeatherDetailsViewController.swift */,
-				E04C9B6E230534D0008FC1F0 /* WeatherDetailsViewController.xib */,
+				E0C90179230BBCB500B3DF60 /* ViewController */,
+				E0C90178230BBCA800B3DF60 /* VIewModel */,
 				E0C6620623091DF3002B0BCF /* WeatherDetails.xcassets */,
-				E0C90173230BB47400B3DF60 /* WeatherDetailsViewModel.swift */,
 			);
 			path = WeatherDetails;
 			sourceTree = "<group>";
@@ -339,6 +338,23 @@
 				E0C66204230916E3002B0BCF /* TempConvertor.swift */,
 			);
 			path = Logic;
+			sourceTree = "<group>";
+		};
+		E0C90178230BBCA800B3DF60 /* VIewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E0C90173230BB47400B3DF60 /* WeatherDetailsViewModel.swift */,
+			);
+			path = VIewModel;
+			sourceTree = "<group>";
+		};
+		E0C90179230BBCB500B3DF60 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E04C9B6E230534D0008FC1F0 /* WeatherDetailsViewController.xib */,
+				E04C9B6D230534D0008FC1F0 /* WeatherDetailsViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		E0C9C7F32305F4EB00C0C72B /* MapView */ = {
