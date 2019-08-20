@@ -178,9 +178,8 @@
 		E04C9B63230524EA008FC1F0 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				E04C9B6623052ACE008FC1F0 /* ProfileViewController.swift */,
-				E04C9B6723052ACE008FC1F0 /* ProfileViewController.xib */,
-				E04C9B6A23052AE3008FC1F0 /* Profile.xcassets */,
+				E0C9017C230BBEAE00B3DF60 /* ViewController */,
+				E0C9017D230BBEC200B3DF60 /* Assets */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -191,7 +190,7 @@
 				E022906C2307B93600C81B69 /* Store */,
 				E0C90179230BBCB500B3DF60 /* ViewController */,
 				E0C90178230BBCA800B3DF60 /* VIewModel */,
-				E0C6620623091DF3002B0BCF /* WeatherDetails.xcassets */,
+				E0C9017B230BBE7200B3DF60 /* Assets */,
 			);
 			path = WeatherDetails;
 			sourceTree = "<group>";
@@ -272,10 +271,10 @@
 		E08E4BCC2305053C005D2F6C /* CountriesList */ = {
 			isa = PBXGroup;
 			children = (
-				E04C9B602305154F008FC1F0 /* CountriesList.xcassets */,
 				E08E4BD123050BFA005D2F6C /* Store */,
-				E0A88B7923065FC80003D75B /* ViewController */,
 				E0A88B7A23065FE00003D75B /* Views */,
+				E0A88B7923065FC80003D75B /* ViewController */,
+				E0C9017A230BBE6300B3DF60 /* Assets */,
 			);
 			path = CountriesList;
 			sourceTree = "<group>";
@@ -351,10 +350,43 @@
 		E0C90179230BBCB500B3DF60 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				E04C9B6E230534D0008FC1F0 /* WeatherDetailsViewController.xib */,
 				E04C9B6D230534D0008FC1F0 /* WeatherDetailsViewController.swift */,
+				E04C9B6E230534D0008FC1F0 /* WeatherDetailsViewController.xib */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		E0C9017A230BBE6300B3DF60 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				E04C9B602305154F008FC1F0 /* CountriesList.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		E0C9017B230BBE7200B3DF60 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				E0C6620623091DF3002B0BCF /* WeatherDetails.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		E0C9017C230BBEAE00B3DF60 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E04C9B6623052ACE008FC1F0 /* ProfileViewController.swift */,
+				E04C9B6723052ACE008FC1F0 /* ProfileViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		E0C9017D230BBEC200B3DF60 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				E04C9B6A23052AE3008FC1F0 /* Profile.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		E0C9C7F32305F4EB00C0C72B /* MapView */ = {
