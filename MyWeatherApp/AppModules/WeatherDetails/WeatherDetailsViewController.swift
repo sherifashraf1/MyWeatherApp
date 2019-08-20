@@ -57,14 +57,19 @@ class WeatherDetailsViewController: UIViewController {
 //        longitudeLabel.text =  lon.string
     }
     
-    func fillViewData(_ description : String, currentDegree : String, lat : String, lon : String) {
-        descriptionLabel.text = description
-        currentDegreeLabel.text = currentDegree
-        latitudeLabel.text = lat
-        longitudeLabel.text = lon
+    func fillViewData(data : WeatherCreatedData) {
+        descriptionLabel.text = data.description
+        currentDegreeLabel.text = data.currentDegree
+        latitudeLabel.text = data.lat
+        longitudeLabel.text = data.lon
     }
 
 
+    struct WeatherCreatedData {
+        let description, currentDegree, lat, lon : String
+    }
+    
+    
 class WeatherDetailsViewModel{
     var data : CityModel?
     var request : WeatherRequest?
