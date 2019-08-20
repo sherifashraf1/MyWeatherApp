@@ -16,12 +16,15 @@ class WeatherDetailsViewController: UIViewController {
     @IBOutlet weak var holderStackView: UIStackView!
     @IBOutlet weak var backgroundImage : UIImageView!
     
-    
+    lazy var viewModel: WeatherDetailsViewModel = {
+        let vm = WeatherDetailsViewModel()
+        return vm
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Details"
-          loadData()
+          viewModel.loadData()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
